@@ -1,13 +1,13 @@
-import { CERRAR_SESION, LOGIN_ERROR, LOGIN_EXITOSO, MOSTRAR_ALERTA, OBTENER_USUARIO, OCULTAR_ALERTA, REGISTRO_ERROR, REGISTRO_EXITOSO } from "../../types";
+import { CERRAR_SESION, LOGIN_ERROR, LOGIN_EXITOSO, OBTENER_USUARIO,  REGISTRO_ERROR, REGISTRO_EXITOSO } from "../../types";
 
 
-
+// eslint-disable-next-line
 export default (state,action)=>{
     switch(action.type){
         case LOGIN_EXITOSO:
         case REGISTRO_EXITOSO:
             localStorage.setItem("token",action.payload.token)
-            console.log(action.payload.token);
+            //console.log(action.payload.token);
             
             
             return {

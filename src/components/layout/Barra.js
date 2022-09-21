@@ -1,20 +1,22 @@
 import React,{useContext,useEffect} from 'react'
 import AuthContext from '../../context/autenticacion/authContext';
-import {Link,useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 export default function Barra() {
 
  //extraer informacion de auth
  const authContext = useContext(AuthContext)
- const {usuario,usuarioAutenticado,cerrarSesion,autenticado}= authContext;
+ const {usuario,cerrarSesion,autenticado}= authContext;
  let navigate=useNavigate()
 
  useEffect(() => {
    //usuarioAutenticado();
   if (autenticado===false) {
     console.log("cerrar sesion");
-    localStorage.removeItem("token")
+    
     navigate("/")
+    localStorage.removeItem("token")
 }
+// eslint-disable-next-line
  }, [autenticado])
 
 

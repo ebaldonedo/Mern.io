@@ -49,7 +49,7 @@ const ProyectoState = props =>{
     const obtenerProyectos =async () =>{
        try {
         const resultado = await clienteAxios.get("/api/proyectos")
-        console.log(resultado.data);
+        //console.log(resultado.data);
 
         dispatch({
             type:OBTERNER_PROYECTOS,
@@ -96,6 +96,7 @@ const ProyectoState = props =>{
 
     const eliminarProyecto = async proyectoId =>{
        try {
+        console.log("eliminar-proyecto:"+proyectoId);
         await clienteAxios.delete(`/api/proyectos/${proyectoId}`);
 
         dispatch({

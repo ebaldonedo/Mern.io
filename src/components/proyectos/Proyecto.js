@@ -17,6 +17,7 @@ export default function Proyecto({proyecto}) {
 
   //Funcion para agregar el proyecto actual
   const seleccionarProyecto = id=>{
+    console.log(proyecto);
     proyectoActual(id)//Fijar proyecto actual
     obtenerTareas(id);//Filtrar las tareas cuando se de click
   }

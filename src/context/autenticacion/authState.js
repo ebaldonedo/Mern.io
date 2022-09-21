@@ -46,15 +46,15 @@ const AuthState= props =>{
     const usuarioAutenticado = async ()=>{
         
          const token=  localStorage.getItem("token");
-        console.log("token de usuario autenticado: "+token);
+        //console.log("token de usuario autenticado: "+token);
         if (token) {
-            //TODO:Funcion para enviar el token po header
+            //TODO:Funcion para enviar el token por header
              tokenAuth(token)
         }
 
         try {
             const respuesta= await clienteAxios.get("/api/auth")
-            console.log(respuesta);
+            //console.log(respuesta);
          dispatch({
             type:OBTENER_USUARIO,
             payload:respuesta.data.usuario

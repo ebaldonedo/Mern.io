@@ -8,6 +8,7 @@ import {CSSTransition,TransitionGroup}from 'react-transition-group'
 
 
 export default function ListaTareas() {
+    const nodeRef= React.useRef(null)
 
 
     //importar State y context
@@ -30,7 +31,8 @@ export default function ListaTareas() {
     
     //Eliminar un proyecto
     const onClickEliminar = ()=>{
-        eliminarProyecto(proyectoActual._id)
+        console.log("se elimino el proyecto:"+proyecto[0].nombre);
+        eliminarProyecto(proyecto[0]._id)
     }
 
   return (
@@ -46,6 +48,7 @@ export default function ListaTareas() {
                        key={i}
                        timeout={400}
                        classNames="tarea"
+                       nodeRef={nodeRef}
                        >
                          <Tarea
                             tarea={tarea}
